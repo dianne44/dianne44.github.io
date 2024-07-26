@@ -368,30 +368,111 @@
         <!--End Gallery-->
         <!-------------------------------------------------------------------------------------------->
         <!--Start Masonry-->
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2>VISUALIZE OUR PRODUCTIVITY</h2>
-            <hr>
-            <p class="text">
-              See the magic happen - Unlock endless event possibilities with our app, where you can browse breathtaking venues,
-              discover inspiring events, and experience a user-friendly interface that makes booking a breeze!
-            </p>
-          </div>
-        </div>
-        <div class="masonry add-top-margin-small add-bottom-margin-small" id="masonry"></div>
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <p class="text">
-              Explore, dream, and book with ease. Get started now and turn your event vision into a reality!"
-              Dive into our event booking app and discover a world of:
-                 ✨ Breathtaking venues that will leave your guests in awe
-                 ✨ Inspiring events to spark your creativity
-                 ✨ Intuitive interface that makes booking a breeze
+        <style>
+  .masonry {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .masonry-item {
+    flex-grow: 1;
+    width: calc(33.333% - 20px);
+    margin-bottom: 20px;
+  }
+  .masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .image-caption {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    .masonry-item {
+      width: calc(50% - 20px);
+    }
+  }
+  @media (max-width: 480px) {
+    .masonry-item {
+      width: 100%;
+    }
+  }
+</style>
 
+<div class="flex-row">
+  <div class="flex-item flex-column">
+    <h2>VISUALIZE OUR PRODUCTIVITY</h2>
+    <hr>
+    <p class="text">
+      See the magic happen - Unlock endless event possibilities with our app, where you can browse breathtaking venues,
+      discover inspiring events, and experience a user-friendly interface that makes booking a breeze!
+    </p>
+  </div>
+</div>
 
-            </p>
-          </div>
-        </div>
+<div class="masonry add-top-margin-small add-bottom-margin-small" id="masonry">
+  <div class="masonry-item">
+    <img src="img/userprofile.jpg" alt="Event Image 1">
+    <p class="image-caption">Where Your Event Journey Begins</p>
+  </div>
+  <div class="masonry-item">
+    <img src="img/homepage.jpg" alt="Event Image 2">
+    <p class="image-caption">Your Event Discovery Platform</p>
+  </div>
+  <div class="masonry-item">
+    <img src="img/category.jpg" alt="Event Image 3">
+    <p class="image-caption">Find Your Interest</p>
+  </div>
+  <div class="masonry-item">
+    <img src="img/postevent.jpg" alt="Event Image 4">
+    <p class="image-caption">Share Your Event Highlights</p>
+  </div>
+  <div class="masonry-item">
+    <img src="img/bookbutton.jpg" alt="Event Image 5">
+    <p class="image-caption"Event Schedule, Venue & More></p>
+  </div>
+  <div class="masonry-item">
+    <img src="img/bookbutton.jpg" alt="Event Image 6">
+    <p class="image-caption">Secure Your Spot</p>
+  </div>
+</div>
+
+<div class="flex-row">
+  <div class="flex-item flex-column">
+    <p class="text">
+      Explore, dream, and book with ease. Get started now and turn your event vision into a reality!"
+      Dive into our event booking app and discover a world of:
+         <li>✨ Breathtaking venues that will leave your guests in awe</li>
+         <li>✨ Inspiring events to spark your creativity</li>
+         <li>✨ Intuitive interface that makes booking a breeze</li>
+    </p>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const masonry = document.querySelector('.masonry');
+    const masonryItems = masonry.querySelectorAll('.masonry-item');
+    
+    function resizeMasonryItems() {
+      masonryItems.forEach(item => {
+        const rowGap = parseInt(window.getComputedStyle(masonry).getPropertyValue('gap'));
+        const rowHeight = parseInt(window.getComputedStyle(masonry).getPropertyValue('grid-auto-rows'));
+        const itemHeight = item.getBoundingClientRect().height;
+        const rowSpan = Math.ceil((itemHeight + rowGap) / (rowHeight + rowGap));
+        item.style.gridRowEnd = `span ${rowSpan}`;
+      });
+    }
+
+    resizeMasonryItems();
+    window.addEventListener('resize', resizeMasonryItems);
+
+    // Recheck sizes after images load
+    window.addEventListener('load', resizeMasonryItems);
+  });
+</script>
         <!--End Masonry-->
         <!-------------------------------------------------------------------------------------------->
         
