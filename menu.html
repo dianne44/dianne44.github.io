@@ -5,23 +5,29 @@
  
   
 
-  
-   <div class="menu-items flex-row-center flex-item">
-  <a class="menu-button" tabindex="0" href="javascript:void(0)">
-  <img src="img/logo-removebg-preview.png" style="width:200px; height:200px;">
-</a>
-
-      <a class="menu-index" href="index.html">Overview</a>
-      <a class="menu-widget" href="widgets.html">Widgets</a>
-      <a class="menu-embedding" href="embedding.html">Embedding</a>
-      <div class="dropdown">
-        <a class="dropbtn" href="empty.html">Dropdown<i class="fas fa-caret-down"></i></a>
-        <div class="dropdown-content">
-          <a href="index.html">Overview</a>
-          <a href="widgets.html">Widgets</a>
-          <a href="embedding.html">Embedding</a>
-        </div>
+  <div class="menu-items" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+  <!-- Menu items aligned to the left -->
+  <div class="menu-left" style="display: flex; align-items: center;">
+    <a class="menu-index" href="index.html" style="margin-right: 20px;">Overview</a>
+    <a class="menu-widget" href="widgets.html" style="margin-right: 20px;">Widgets</a>
+    <a class="menu-embedding" href="embedding.html" style="margin-right: 20px;">Embedding</a>
+    <div class="dropdown" style="position: relative; display: inline-block;">
+      <a class="dropbtn" href="empty.html" style="display: flex; align-items: center; text-decoration: none;">Dropdown<i class="fas fa-caret-down" style="margin-left: 5px;"></i></a>
+      <div class="dropdown-content" style="display: none; position: absolute; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;">
+        <a href="index.html" style="padding: 12px 16px; text-decoration: none; display: block;">Overview</a>
+        <a href="widgets.html" style="padding: 12px 16px; text-decoration: none; display: block;">Widgets</a>
+        <a href="embedding.html" style="padding: 12px 16px; text-decoration: none; display: block;">Embedding</a>
       </div>
+    </div>
+  </div>
+
+  <!-- Logo aligned to the right -->
+  <a class="menu-button" tabindex="0" href="javascript:void(0)">
+    <img src="img/logo-removebg-preview.png" style="width: 200px; height: 200px;">
+  </a>
+</div>
+
+   
      <!--
       <a href="https://github.com/yenchiah/project-website-template">GitHub</a>
      -->
