@@ -15,10 +15,11 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      padding: 10px 0;
+      padding: 20px 0;
       bottom: 0;
       width: 100%;
       background-color: #3366cc; /* Blue background color */
+      color: white;
     }
     .footer-content {
       max-width: 1200px;
@@ -26,9 +27,48 @@
       text-align: center;
     }
     .footer-content img {
-      width: 30px;
-      height: 30px;
-      margin: 0 5px;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin: 10px 20px;
+    }
+    .social-icons {
+      margin: 20px 0;
+    }
+    .social-icons a {
+      margin: 0 10px;
+    }
+    form {
+      margin: 20px 0;
+    }
+    input[type="email"] {
+      padding: 10px;
+      width: 200px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    nav {
+      margin-top: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -36,25 +76,28 @@
   <!-- Your landing page content goes here -->
   <footer>
     <div class="footer-content">
-      <section id="contacts">
-        <h2>Contact Fun Expo</h2>
-        <p>
-          <a href="#"><img src="img/locate.png" alt="Kampala"></a>
-        </p>
-        <p>
-          <a href="#"><img src="img/phone.png" alt="+256750525513"></a>
-        </p>
-        <p>
-          <a href="#"><img src="img/email.png" alt="akothrosemary51@gmail.com"></a>
-        </p>
-      </section>
+      <h2>Contact Fun Expo</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <img src="img/locate.png" alt="Location">
+          <span>Kampala</span>
+        </div>
+        <div class="contact-item">
+          <img src="img/phone.png" alt="Phone">
+          <span>+256750525513</span>
+        </div>
+        <div class="contact-item">
+          <img src="img/email.png" alt="Email">
+          <span>akothrosemary51@gmail.com</span>
+        </div>
+      </div>
       
       <h3>Stay Connected</h3>
-      <p>
+      <div class="social-icons">
         <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
         <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
         <a href="#"><img src="img/instagram.png" alt="Instagram"></a> 
-      </p>
+      </div>
       
       <h3>Join Our Community</h3>
       <p>Subscribe to our newsletter for updates and exclusive offers.</p>
