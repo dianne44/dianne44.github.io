@@ -1,4 +1,4 @@
-/*************************************************************************
+//*************************************************************************
  * GitHub: https://github.com/yenchiah/project-website-template
  * Version: v3.43
  * This JS file has widgets for building interactive web applications
@@ -7,14 +7,14 @@
  * Instead, add your own JavaScript in the custom.js file
  *************************************************************************/
 
-(function () {
+//(function () {
   "use strict";
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
   // Create the class
   //
-  var Widgets = function () {
+  //var Widgets = function () {
     /**
      * A helper for getting data safely with a default value.
      * @public
@@ -22,7 +22,7 @@
      * @param {*} defaultVal - the default value to return when the original one is undefined.
      * @returns {*} - the original value (if not undefined) or the default value.
      */
-    function safeGet(v, defaultVal) {
+  //  function safeGet(v, defaultVal) {
       if (typeof defaultVal === "undefined") defaultVal = "";
       return (typeof v === "undefined") ? defaultVal : v;
     }
@@ -32,98 +32,98 @@
      * @public
      * @todo need documentation
      */
-    function createCustomTab(settings) {
+   // function createCustomTab(settings) {
       settings = safeGet(settings, {});
 
       // Specify the selector of the tab
-      var $selector = $(settings["selector"]);
-      if ($selector.length == 0) {
+    //  var $selector = $(settings["selector"]);
+     //if ($selector.length == 0) {
         console.error("Cannot find selector: " + settings["selector"]);
-        return false;
+      //  return false;
       }
-      if ($selector.length > 1) {
+     // if ($selector.length > 1) {
         console.error("Multiple selectors were found. Please indicate only one at a time.");
-        return false;
+      //  return false;
       }
 
       // Get the menu items
-      var $menu_items = $selector.find(".custom-tab-menu-item");
-      var $all_contents = $selector.find(".custom-tab-content");
+    //  var $menu_items = $selector.find(".custom-tab-menu-item");
+     // var $all_contents = $selector.find(".custom-tab-content");
       $menu_items.each(function (i, element) {
-        var $element = $(element);
-        var idx_content = $element.data("content");
-        var $desired_content = $selector.find(".custom-tab-content[data-content=" + idx_content + "]");
+      //  var $element = $(element);
+      //  var idx_content = $element.data("content");
+      //  var $desired_content = $selector.find(".custom-tab-content[data-content=" + idx_content + "]");
         // Add click event
-        $element.on("click", function () {
-          $all_contents.hide();
-          $desired_content.css("display", "flex");
-          $menu_items.removeClass("active");
-          $element.addClass("active");
+     //   $element.on("click", function () {
+     //     $all_contents.hide();
+    //      $desired_content.css("display", "flex");
+    //      $menu_items.removeClass("active");
+    //      $element.addClass("active");
         });
       });
-      $selector.find(".custom-tab-menu-item.active").click();
+    //  $selector.find(".custom-tab-menu-item.active").click();
     }
-    this.createCustomTab = createCustomTab;
+  //  this.createCustomTab = createCustomTab;
 
     /**
      * @public
      * @todo need documentation
      */
-    function createCustomDialog(settings) {
-      settings = safeGet(settings, {});
+ //   function createCustomDialog(settings) {
+/      settings = safeGet(settings, {});
 
       // Create a button for taking actions (e.g., confirm that users get the message)
       // The default text for the button is "Confirm"
-      var has_action_callback = (typeof settings["action_callback"] === "function");
-      var action_text = safeGet(settings["action_text"], "Confirm");
+ //     var has_action_callback = (typeof settings["action_callback"] === "function");
+//      var action_text = safeGet(settings["action_text"], "Confirm");
 
       // Create a button for cancellation
       // The default text for the button is "Cancel" when there is an action button
       // The default text for the button is "Ok" when there is no action button
-      var has_cancel_callback = (typeof settings["cancel_callback"] === "function");
-      var cancel_text = has_action_callback ? "Cancel" : "Ok";
-      cancel_text = safeGet(settings["cancel_text"], cancel_text);
+  //    var has_cancel_callback = (typeof settings["cancel_callback"] === "function");
+ //     var cancel_text = has_action_callback ? "Cancel" : "Ok";
+ //     cancel_text = safeGet(settings["cancel_text"], cancel_text);
 
       // Hide the cancel button or not
-      var show_cancel_btn = safeGet(settings["show_cancel_btn"], true);
+   //   var show_cancel_btn = safeGet(settings["show_cancel_btn"], true);
 
       // Specify the style
-      var style_class = "custom-dialog-flat " + safeGet(settings["class"], "");
+  //    var style_class = "custom-dialog-flat " + safeGet(settings["class"], "");
 
       // Specify the selector of the dialog
       // If no selector, a <div></div> will be created
-      var $selector = $(safeGet(settings["selector"], "<div></div>"));
+  //    var $selector = $(safeGet(settings["selector"], "<div></div>"));
 
       // Specify the width of the dialog
-      var width = safeGet(settings["width"], 260);
+   //   var width = safeGet(settings["width"], 260);
 
       // Specify if full width buttons
-      var full_width_button = safeGet(settings["full_width_button"], false);
+   //   var full_width_button = safeGet(settings["full_width_button"], false);
 
       // Show the close button or not
-      var show_close_button = safeGet(settings["show_close_button"], true);
+    //  var show_close_button = safeGet(settings["show_close_button"], true);
 
       // Close the dialog when the action button is clicked or not
-      var close_dialog_on_action = safeGet(settings["close_dialog_on_action"], true);
+    //  var close_dialog_on_action = safeGet(settings["close_dialog_on_action"], true);
 
       // Close the dialog when the cancel button is clicked or not
-      var close_dialog_on_cancel = safeGet(settings["close_dialog_on_cancel"], true);
+      //var close_dialog_on_cancel = safeGet(settings["close_dialog_on_cancel"], true);
 
       // Reverse the positions of the action and cancel buttons
-      var reverse_button_positions = safeGet(settings["reverse_button_positions"], false);
+    //  var reverse_button_positions = safeGet(settings["reverse_button_positions"], false);
 
       // Specify buttons
-      var buttons = [];
-      if (show_cancel_btn) {
-        var btn_class = "ui-cancel-button";
-        if (full_width_button) {
+    //  var buttons = [];
+   //   if (show_cancel_btn) {
+    //    var btn_class = "ui-cancel-button";
+    /    if (full_width_button) {
           btn_class += " full-width";
-        } else {
-          btn_class += " stretch-on-mobile";
-        }
-        buttons.push({
+    /    } else {
+  /        btn_class += " stretch-on-mobile";
+    /    }
+       // buttons.push({
           class: btn_class,
-          text: cancel_text,
+      /    text: cancel_text,
           click: function (event) {
             if (close_dialog_on_cancel) {
               $(this).dialog("close");
@@ -132,7 +132,7 @@
           }
         });
       }
-      if (has_action_callback) {
+    //  if (has_action_callback) {
         var btn_class = "ui-action-button";
         if (full_width_button) {
           btn_class += " full-width";
@@ -143,24 +143,24 @@
           class: btn_class,
           text: action_text,
           click: function (event) {
-            if (close_dialog_on_action) {
+         //   if (close_dialog_on_action) {
               $(this).dialog("close");
             }
-            if (has_action_callback) settings["action_callback"](event);
+         //   if (has_action_callback) settings["action_callback"](event);
           }
         });
       }
 
       // Reverse button positions or not
-      if (buttons.length == 2 && reverse_button_positions) {
-        var tmp = buttons[1];
+  //    if (buttons.length == 2 && reverse_button_positions) {
+    //    var tmp = buttons[1];
         buttons[1] = buttons[0];
         buttons[0] = tmp;
       }
 
       // Create dialog
-      var $selector_container;
-      var dialog_settings = {
+   //   var $selector_container;
+   //   var dialog_settings = {
         autoOpen: false,
         resizable: false,
         height: "auto",
@@ -173,7 +173,8 @@
         dialogClass: style_class, // this is for before jquery 1.12
         buttons: buttons,
         closeText: "",
-        open: function (event, ui) {
+     
+          //open: function (event, ui) {
           var num_opened_dialog = 0;
           $(".ui-dialog-content").each(function () {
             if ($(this).dialog("isOpen")) num_opened_dialog += 1;
@@ -388,8 +389,8 @@
      * @param {string} imageUrl - the source URL of an image for the photo.
      * @returns {Object} - a jQuery DOM object.
      */
-    function createUnsplashPhotoHTML(credit, imageUrl) {
-      var html = '<figure style="display: none;"><img src="' + imageUrl + '"><div>' + credit + '</div></figure>';
+   // function createUnsplashPhotoHTML(credit, imageUrl) {
+     // var html = '<figure style="display: none;"><img src="' + imageUrl + '"><div>' + credit + '</div></figure>';
       var $html = $(html);
       $html.find("img").one("load", function () {
         // Only show the figure when the image is loaded
@@ -407,9 +408,9 @@
      * @param {function} [onselect] - callback function after confirming photo selection.
      * @returns {Object} - a jQuery object of the dialog.
      */
-    function createUnsplashPhotoPickerDialog(uniqueId, dialogData, photoURL, onselect) {
+   // function createUnsplashPhotoPickerDialog(uniqueId, dialogData, photoURL, onselect) {
       // Create HTML
-      var html = '';
+   //   var html = '';
       html += '<div id="' + uniqueId + '" title="Photo Picker" data-role="none" style="display: none;">';
       html += '  <p class="text dialog-photo-picker-text">';
       html += '    Search photos using <a href="https://unsplash.com/" target="_blank">Unsplash</a> and pick one:';
@@ -429,7 +430,7 @@
       $(document.body).append($html);
 
       // Create dialog
-      var $imagePickerDialog = createCustomDialog({
+   //   var $imagePickerDialog = createCustomDialog({
         "selector": "#" + uniqueId,
         "action_text": "Select",
         "width": 290,
@@ -446,7 +447,7 @@
       $imagePickerDialog.data("raw", dialogData);
 
       // Handle photo search
-      $html.find(".search-box-container").on("submit", function (event) {
+     // $html.find(".search-box-container").on("submit", function (event) {
         event.preventDefault();
         var search = $html.find(".search-box").blur().val();
         if (search == "") {
@@ -458,7 +459,7 @@
           } else {
             targetPhotoURL = photoURL + "&query=" + search;
           }
-          $.getJSON(targetPhotoURL, function (data) {
+        //  $.getJSON(targetPhotoURL, function (data) {
             $html.find(".photos-masonry-error-message").hide();
             var $photos = $html.find(".masonry").empty().show();
             for (var i = 0; i < data.length; i++) {
