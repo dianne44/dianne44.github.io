@@ -15,54 +15,103 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      padding: 10px 0;
+      padding: 20px 0;
       bottom: 0;
       width: 100%;
-      background-color: #3366cc; /* Blue background color */
+      background-color: #3366cc;
+      color: white;
     }
     .footer-content {
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
     }
-    .footer-content img {
-      width: 30px;
-      height: 30px;
-      margin: 0 5px;
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px 0;
+    }
+    .contact-item img, .social-icon img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .social-icon {
+      display: flex;
+      align-items: center;
+      margin: 0 10px;
+    }
+    form {
+      margin: 20px 0;
+    }
+    input[type="email"] {
+      padding: 10px;
+      width: 200px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    nav {
+      margin-top: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
   <!-- Your landing page content goes here -->
+
   <footer>
     <div class="footer-content">
-      <section id="contacts">
-        <h2>Contact Fun Expo</h2>
-        <p>
-          <a href="#"><img src="img/locate.png" alt="Kampala"></a>
-        </p>
-        <p>
-          <a href="#"><img src="img/phone.png" alt="+256750525513"></a>
-        </p>
-        <p>
-          <a href="#"><img src="img/email.png" alt="akothrosemary51@gmail.com"></a>
-        </p>
-      </section>
-      
+      <h2>Contact Fun Expo</h2>
+      <div class="contact-item">
+        <img src="img/locate.png" alt="Location icon">
+        <span>Kampala</span>
+      </div>
+      <div class="contact-item">
+        <img src="img/phone.png" alt="Phone icon">
+        <span>+256750525513</span>
+      </div>
+      <div class="contact-item">
+        <img src="img/email.png" alt="Email icon">
+        <span>akothrosemary51@gmail.com</span>
+      </div>
+
       <h3>Stay Connected</h3>
-      <p>
-        <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="img/instagram.png" alt="Instagram"></a> 
-      </p>
-      
+      <div class="social-icons">
+        <div class="social-icon">
+          <img src="img/facebook.png" alt="Facebook icon">
+          <span>Facebook</span>
+        </div>
+        <div class="social-icon">
+          <img src="img/twitter.png" alt="Twitter icon">
+          <span>Twitter</span>
+        </div>
+        <div class="social-icon">
+          <img src="img/instagram.png" alt="Instagram icon">
+          <span>Instagram</span>
+        </div>
+      </div>
+
       <h3>Join Our Community</h3>
       <p>Subscribe to our newsletter for updates and exclusive offers.</p>
       <form>
         <input type="email" placeholder="Enter your email">
         <button type="submit">Subscribe</button>
       </form>
-      
+
       <nav>
         <h3>Legal</h3>
         <a href="#">Privacy Policy</a> | <a href="#">Terms of service</a> | Copyright 2024 Fun Expo
