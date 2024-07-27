@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,36 +17,32 @@
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f4f4f4;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
         header {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: white;
+            color: var(--secondary-color);
             text-align: center;
-            padding: 2rem 0;
+            padding: 1rem 0;
         }
-
         .logo {
-            max-width: 150px;
-            height: auto;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
         }
-
         h1, h2 {
             color: var(--secondary-color);
         }
-
         .section {
             background-color: white;
             margin: 2rem 0;
@@ -55,22 +50,18 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
-
         .team-member {
             text-align: center;
             transition: transform 0.3s ease;
         }
-
         .team-member:hover {
             transform: translateY(-5px);
         }
-
         .team-member img {
             width: 150px;
             height: 150px;
@@ -78,14 +69,12 @@
             object-fit: cover;
             border: 3px solid var(--primary-color);
         }
-
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
         }
-
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -93,13 +82,11 @@
             width: 100%;
             height: 100%;
         }
-
         .timeline {
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .timeline::after {
             content: '';
             position: absolute;
@@ -110,14 +97,12 @@
             left: 50%;
             margin-left: -3px;
         }
-
         .timeline-item {
             padding: 10px 40px;
             position: relative;
             background-color: inherit;
             width: 50%;
         }
-
         .timeline-item::after {
             content: '';
             position: absolute;
@@ -130,25 +115,20 @@
             border-radius: 50%;
             z-index: 1;
         }
-
         .left {
             left: 0;
         }
-
         .right {
             left: 50%;
         }
-
         .right::after {
             left: -16px;
         }
-
         .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
         }
-
         .value-item {
             background-color: var(--primary-color);
             color: white;
@@ -156,18 +136,33 @@
             border-radius: 8px;
             text-align: center;
         }
-
         .contact-info {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
-
         .contact-item {
             margin: 1rem;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
+        .team-courtesy {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .team-courtesy img {
+            max-width: 100%;
+            height: auto;
+        }
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 0.5rem;
+        }
         @media (max-width: 768px) {
             .timeline::after {
                 left: 31px;
@@ -186,12 +181,13 @@
         }
     </style>
 </head>
+
 <body>
+    <body>
     <header>
         <img src="img/flogo.jpeg" alt="Fun Expo Logo" class="logo">
         <h1>Fun Expo</h1>
     </header>
-
     <div class="container">
         <section class="section">
             <h2>Our Mission</h2>
@@ -212,9 +208,9 @@
             <h2>Our Dedicated Team</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="img/brendan1.jpg" alt="Katungye Brendan">
+                    <img src="img/brendan2.jpg" alt="Katungye Brendan">
                     <h3>Katungye Brendan</h3>
-                    <p>Full Stack Developerr</p>
+                    <p>Full Stack Developer</p>
                 </div>
                 <div class="team-member">
                     <img src="img/tracy1.jpg" alt="Among Tracy Angalla">
@@ -227,7 +223,7 @@
                     <p>Digital Payment Architect</p>
                 </div>
                 <div class="team-member">
-                    <img src="img/diane1.jpg" alt="Apio Diane">
+                    <img src="img/diane2.jpg" alt="Apio Diane">
                     <h3>Apio Diane</h3>
                     <p>Web Stylist</p>
                 </div>
@@ -263,7 +259,7 @@
                 </div>
                 <div class="timeline-item right">
                     <h3>August 2024</h3>
-                    <p> Official luanch of the app to facilitated events coming soon!!!</p>
+                    <p>Official launch of the app to facilitate events coming soon!!!</p>
                 </div>
             </div>
         </section>
@@ -280,36 +276,101 @@
         </section>
 
         <section class="section">
-            <h2>Team Caurtesy</h2>
-            <div class="team-grid">
-                    <img src="img/team1.jpg" alt="">
-                    <img src="img/team2.jpg" alt="">
-                    <img src="img/team3.jpg" alt="">
-                    <img src="img/team4.jpg" alt="">
-                </div>
+            <h2>Team Courtesy</h2>
+            <div class="team-courtesy">
+                <img src="img/team1.jpg" alt="">
+                <img src="img/team2.jpg" alt="">
+                <img src="img/team3.jpg" alt="">
+                <img src="img/team4.jpg" alt="">
+            </div>
         </section>
 
         <section class="section">
             <h2>Contact Us</h2>
             <div class="contact-info">
                 <div class="contact-item">
+                    <img src="img/email.png" alt="Email" class="contact-icon">
                     <h3>Email</h3>
                     <p>info@funexpo.com</p>
                 </div>
                 <div class="contact-item">
+                    <img src="img/phone.png" alt="Phone" class="contact-icon">
                     <h3>Phone</h3>
                     <p>+1 (555) 123-4567</p>
                 </div>
                 <div class="contact-item">
+                    <img src="img/phone.png" alt="Address" class="contact-icon">
                     <h3>Address</h3>
                     <p>123 Event Street, Party City, PC 12345</p>
                 </div>
             </div>
         </section>
     </div>
+<script>
+        // Smooth scroll effect
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-    <script>
-        // Add some interactivity
+        // Read More functionality for mission statement
+        const missionParagraph = document.querySelector('.section:first-of-type p');
+        const originalText = missionParagraph.textContent;
+        const shortenedText = originalText.slice(0, 150) + '...';
+        let isExpanded = false;
+
+        missionParagraph.textContent = shortenedText;
+        const readMoreBtn = document.createElement('button');
+        readMoreBtn.textContent = 'Read More';
+        readMoreBtn.style.marginTop = '10px';
+        missionParagraph.parentNode.insertBefore(readMoreBtn, missionParagraph.nextSibling);
+
+        readMoreBtn.addEventListener('click', () => {
+            if (isExpanded) {
+                missionParagraph.textContent = shortenedText;
+                readMoreBtn.textContent = 'Read More';
+            } else {
+                missionParagraph.textContent = originalText;
+                readMoreBtn.textContent = 'Read Less';
+            }
+            isExpanded = !isExpanded;
+        });
+
+        // Simple slideshow for team courtesy images
+        const courtesyImages = document.querySelectorAll('.team-courtesy img');
+        let currentImageIndex = 0;
+
+        function showNextImage() {
+            courtesyImages[currentImageIndex].style.display = 'none';
+            currentImageIndex = (currentImageIndex + 1) % courtesyImages.length;
+            courtesyImages[currentImageIndex].style.display = 'block';
+        }
+
+        courtesyImages.forEach((img, index) => {
+            if (index !== 0) {
+                img.style.display = 'none';
+            }
+        });
+
+        setInterval(showNextImage, 3000);
+
+        // Hover effect for value items
+        const valueItems = document.querySelectorAll('.value-item');
+        valueItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'scale(1.1)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'scale(1)';
+            });
+        });
+
+        // Existing team member click effect
         document.querySelectorAll('.team-member').forEach(member => {
             member.addEventListener('click', () => {
                 member.style.transform = 'scale(1.1)';
@@ -321,4 +382,3 @@
     </script>
 </body>
 </html>
-
