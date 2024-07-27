@@ -464,7 +464,82 @@
         <!--End Legend-->
         <!-------------------------------------------------------------------------------------------->
         <!--Start Gallery-->
-        
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Accordion</title>
+    <style>
+        .faq-accordion {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background-color: #f1f1f1;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            background-color: #ffffff;
+            padding: 15px;
+            border: 1px solid #f1f1f1;
+            display: none;
+        }
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+        .arrow.open {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="faq-accordion"></div>
+
+    <script>
+        function createFAQAccordion(faqs) {
+            const faqItems = faqs.map((faq, index) => `
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(${index})">
+                        ${faq.question}
+                        <span class="arrow" id="arrow-${index}">▼</span>
+                    </button>
+                    <div class="faq-answer" id="answer-${index}">${faq.answer}</div>
+                </div>
+            `).join('');
+
+            return `<div class="faq-accordion">${faqItems}</div>`;
+        }
+
+        function toggleFAQ(index) {
+            const answer = document.getElementById(`answer-${index}`);
+            const arrow = document.getElementById(`arrow-${index}`);
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            arrow.classList.toggle('open');
+        }
+
+        // Example usage
+        const faqContainer = document.getElementById('faq-accordion');
+        const faqs = [
+            { question: 'What is this app about?', answer: 'This app is about event planning and management.' },
+            { question: 'How do I create an event?', answer: 'You can create an event by clicking the "Create Event" button and filling out the form.' }
+        ];
+        faqContainer.innerHTML = createFAQAccordion(faqs);
+    </script>
+</body>
+</html>
+
         <!--End Gallery-->
         <!-------------------------------------------------------------------------------------------->
         <!--Start Masonry-->
