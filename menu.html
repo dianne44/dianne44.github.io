@@ -1,32 +1,29 @@
 <div class="menu" style="background-image: url('img/sky-blue-blue-sky-background.png'); background-size: cover; background-repeat: no-repeat; padding: 0; margin: 0;">
 
-  <header id="header" style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: rgba(255, 255, 255, 0.8); position: relative; width: 100%; box-sizing: border-box;">
-    
-    <!-- Logo positioned on the far left 
-    <div id="logoWrapper" style="flex: 1; display: flex; align-items: center;">
-         <h1 id="logoImage" style="margin: 0;"><a href="/"><img src="img/logo-removebg-preview.png" style="height: 50px; width: auto;"></a></h1>
-    </div>
--->
-<div class="menu-items flex-row-center flex-item">
-  <a class="menu-button" tabindex="0" href="javascript:void(0)">
-  <img src="img/logo-removebg-preview.png" style="width:200px; height:200px;">
-</a>
+  <header id="header" style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: rgba(255, 255, 255, 0.8); width: 100%; box-sizing: border-box;">
 
-      <a class="menu-index" href="index.html">Overview</a>
-      <a class="menu-widget" href="widgets.html">Widgets</a>
-      <a class="menu-embedding" href="embedding.html">Embedding</a>
-      <div class="dropdown">
-        <a class="dropbtn" href="empty.html">Dropdown<i class="fas fa-caret-down"></i></a>
-        <div class="dropdown-content">
-          <a href="index.html">Overview</a>
-          <a href="widgets.html">Widgets</a>
-          <a href="embedding.html">Embedding</a>
+    <!-- Logo positioned on the far left -->
+    <div id="logoWrapper" style="flex: 1; display: flex; align-items: center;">
+      <h1 id="logoImage" style="margin: 0;"><a href="/"><img src="img/logo-removebg-preview.png" style="height: 50px; width: auto;"></a></h1>
+    </div>
+
+    <!-- Menu items horizontally centered -->
+    <div class="menu-items" style="display: flex; flex: 1; justify-content: center; align-items: center;">
+      <a class="menu-index" href="index.html" style="margin: 0 10px; text-decoration: none;">Overview</a>
+      <a class="menu-widget" href="widgets.html" style="margin: 0 10px; text-decoration: none;">Widgets</a>
+      <a class="menu-embedding" href="embedding.html" style="margin: 0 10px; text-decoration: none;">Embedding</a>
+      <div class="dropdown" style="position: relative;">
+        <a class="dropbtn" href="empty.html" style="text-decoration: none; display: flex; align-items: center;">Dropdown<i class="fas fa-caret-down" style="margin-left: 5px;"></i></a>
+        <div class="dropdown-content" style="display: none; position: absolute; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;">
+          <a href="index.html" style="padding: 12px 16px; text-decoration: none; display: block;">Overview</a>
+          <a href="widgets.html" style="padding: 12px 16px; text-decoration: none; display: block;">Widgets</a>
+          <a href="embedding.html" style="padding: 12px 16px; text-decoration: none; display: block;">Embedding</a>
         </div>
       </div>
+    </div>
 
-    
-    <!-- Hamburger menu icon -->
-    <div class="mobile-nav-toggle" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; padding: 10px; margin-left: auto;">
+    <!-- Hamburger menu icon positioned on the far right -->
+    <div class="mobile-nav-toggle" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; padding: 10px;">
       <div class="top-bar" style="width: 25px; height: 3px; background: #000; margin: 3px 0;"></div>
       <div class="middle-bar" style="width: 25px; height: 3px; background: #000; margin: 3px 0;"></div>
       <div class="bottom-bar" style="width: 25px; height: 3px; background: #000; margin: 3px 0;"></div>
@@ -38,11 +35,9 @@
         <div class="index" style="margin-bottom: 20px;">
           <a href="/about" style="color: #fff; text-decoration: none;">About</a>
         </div>
-
         <div class="menu-widget" style="margin-bottom: 20px;">
           <a href="widgets.html" style="color: #fff; text-decoration: none;">Widgets</a>
         </div>
-        
         <div class="collection" style="margin-bottom: 20px;">
           <a href="/services" style="color: #fff; text-decoration: none;">Services</a>
         </div>
