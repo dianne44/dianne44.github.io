@@ -423,13 +423,15 @@
         <!--Start Legend-->
         <div class="flex-row">
           <div class="flex-item flex-column">
-            <h2>FAQ</h2>
-            <!DOCTYPE html>
+            <h2>FAQ</h2><div/>
+            
+            
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Accordion</title>
+    <title>FAQ Accordion and Event Creation</title>
     <style>
         .faq-accordion {
             max-width: 600px;
@@ -462,10 +464,58 @@
         .arrow.open {
             transform: rotate(180deg);
         }
+        .create-event-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .event-form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            display: none;
+        }
+        .event-form input, .event-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .event-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div id="faq-accordion"></div>
+    <button class="create-event-button" onclick="showEventForm()">Create Event</button>
+    <div id="event-form" class="event-form">
+        <h2>Create New Event</h2>
+        <form onsubmit="handleEventSubmit(event)">
+            <input type="text" placeholder="Event Name" required>
+            <input type="date" placeholder="Event Date" required>
+            <input type="time" placeholder="Event Time" required>
+            <input type="text" placeholder="Event Location" required>
+            <textarea placeholder="Event Description" rows="4" required></textarea>
+            <button type="submit">Create Event</button>
+        </form>
+    </div>
 
     <script>
         function createFAQAccordion(faqs) {
@@ -478,7 +528,6 @@
                     <div class="faq-answer" id="answer-${index}">${faq.answer}</div>
                 </div>
             `).join('');
-
             return `<div class="faq-accordion">${faqItems}</div>`;
         }
 
@@ -487,6 +536,20 @@
             const arrow = document.getElementById(`arrow-${index}`);
             answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
             arrow.classList.toggle('open');
+        }
+
+        function showEventForm() {
+            document.getElementById('event-form').style.display = 'block';
+        }
+
+        function handleEventSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const eventDetails = Object.fromEntries(formData.entries());
+            console.log('Event created:', eventDetails);
+            alert('Event created successfully!');
+            event.target.reset();
+            document.getElementById('event-form').style.display = 'none';
         }
 
         // Example usage
@@ -499,6 +562,8 @@
     </script>
 </body>
 </html>
+
+  
 
         <!--End Legend-->
         <!-------------------------------------------------------------------------------------------->
