@@ -647,111 +647,68 @@
         <!--End Gallery-->
         <!-------------------------------------------------------------------------------------------->
         <!--Start Masonry-->
-        <style>
-  .masonry {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  .masonry-item {
-    flex-grow: 1;
-    width: calc(33.333% - 20px);
-    margin-bottom: 20px;
-  }
-  .masonry-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .image-caption {
-    margin-top: 10px;
-    font-size: 14px;
-    text-align: center;
-  }
-  @media (max-width: 768px) {
-    .masonry-item {
-      width: calc(50% - 20px);
-    }
-  }
-  @media (max-width: 480px) {
-    .masonry-item {
-      width: 100%;
-    }
-  }
-</style>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Buttons</title>
+    <style>
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px auto;
+        }
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: opacity 0.3s ease;
+        }
+        .download-button:hover {
+            opacity: 0.9;
+        }
+        .app-store {
+            background-color: #000000;
+            color: white;
+        }
+        .google-play {
+            background-color: #689f38;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="download-buttons"></div>
 
-<div class="flex-row">
-  <div class="flex-item flex-column">
-    <h2>VISUALIZE OUR PRODUCTIVITY</h2>
-    <hr>
-    <p class="text">
-      See the magic happen - Unlock endless event possibilities with our app, where you can browse breathtaking venues,
-      discover inspiring events, and experience a user-friendly interface that makes booking a breeze!
-    </p>
-  </div>
-</div>
+    <script>
+        function createDownloadButtons(appStoreLink, googlePlayLink) {
+            return `
+                <div class="download-buttons">
+                    <a href="${appStoreLink}" class="download-button app-store">
+                        Download on the App Store
+                    </a>
+                    <a href="${googlePlayLink}" class="download-button google-play">
+                        Get it on Google Play
+                    </a>
+                </div>
+            `;
+        }
 
-<div class="masonry add-top-margin-small add-bottom-margin-small" id="masonry">
-  <div class="masonry-item">
-    <img src="img/userprofile.jpeg" alt="Event Image 1">
-    <p class="image-caption">Where Your Event Journey Begins</p>
-  </div>
-  <div class="masonry-item">
-    <img src="img/homepage.jpeg" alt="Event Image 2">
-    <p class="image-caption">Your Event Discovery Platform</p>
-  </div>
-  <div class="masonry-item">
-    <img src="img/category.jpeg" alt="Event Image 3">
-    <p class="image-caption">Find Your Interest</p>
-  </div>
-  <div class="masonry-item">
-    <img src="img/postevent.jpeg" alt="Event Image 4">
-    <p class="image-caption">Share Your Event Highlights</p>
-  </div>
-  <div class="masonry-item">
-    <img src="img/bookbutton.jpeg" alt="Event Image 5">
-    <p class="image-caption">Event Schedule, Venue & More</p>
-  </div>
-  <div class="masonry-item">
-    <img src="img/bookbutton.jpeg" alt="Event Image 6">
-    <p class="image-caption">Secure Your Spot</p>
-  </div>
-</div>
+        // Example usage
+        const buttonsContainer = document.getElementById('download-buttons');
+        buttonsContainer.innerHTML = createDownloadButtons(
+            'https://apps.apple.com/your-app',
+            'https://play.google.com/store/apps/your-app'
+        );
+    </script>
+</body>
+</html>
 
-<div class="flex-row">
-  <div class="flex-item flex-column">
-    <p class="text">
-      Explore, dream, and book with ease. Get started now and turn your event vision into a reality!"
-      Dive into our event booking app and discover a world of:
-         <li>✨ Breathtaking venues that will leave your guests in awe</li>
-         <li>✨ Inspiring events to spark your creativity</li>
-         <li>✨ Intuitive interface that makes booking a breeze</li>
-    </p>
-  </div>
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const masonry = document.querySelector('.masonry');
-    const masonryItems = masonry.querySelectorAll('.masonry-item');
-    
-    function resizeMasonryItems() {
-      masonryItems.forEach(item => {
-        const rowGap = parseInt(window.getComputedStyle(masonry).getPropertyValue('gap'));
-        const rowHeight = parseInt(window.getComputedStyle(masonry).getPropertyValue('grid-auto-rows'));
-        const itemHeight = item.getBoundingClientRect().height;
-        const rowSpan = Math.ceil((itemHeight + rowGap) / (rowHeight + rowGap));
-        item.style.gridRowEnd = `span ${rowSpan}`;
-      });
-    }
-
-    resizeMasonryItems();
-    window.addEventListener('resize', resizeMasonryItems);
-
-    // Recheck sizes after images load
-    window.addEventListener('load', resizeMasonryItems);
-  });
-</script>
         <!--End Masonry-->
         <!-------------------------------------------------------------------------------------------->
         
